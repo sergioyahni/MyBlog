@@ -1,0 +1,25 @@
+﻿How to use Identity Pages in ASP.NET MVC Applications - Edit the register and login page
+https://www.youtube.com/watch?v=fCS5LLOs3Qg
+
+ASP.NET Core Crash Course - C# App in One Hour
+https://www.youtube.com/watch?v=BfEjDD8mWYg&t=1932s
+
+Build a real BLOG web-app in ASP.NET Core - Using a HTML Editor
+https://www.youtube.com/watch?v=sWrCTga0_lQ
+
+.NET 6 Web API 🔒 Role-Based Authorization with JSON Web Tokens (JWT):
+https://www.youtube.com/watch?v=TDY_DtTEkes
+
+Template: Clean Blog
+https://startbootstrap.com/theme/clean-blog
+
+password
+&5S!#rYchdn6R+$
+
+Asp.Net Core MVC Image Upload and Retrieve
+https://www.youtube.com/watch?v=QpJvqiHl1Fo
+
+[Article] ASP.NET Core MVC Image Upload and Retrieve
+https://www.codaffection.com/asp-net-core-article/asp-net-core-mvc-image-upload-and-retrieve/
+
+TODO: CREATE MVC ONLY TO UPLOAD IMAGE

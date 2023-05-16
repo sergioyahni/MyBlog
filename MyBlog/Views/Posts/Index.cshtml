@@ -1,0 +1,60 @@
+﻿@model IEnumerable<MyBlog.Models.Posts>
+
+@{
+    ViewData["Title"] = "A Simple Blog";
+}
+
+<header class="masthead" style="background-image: url('img/blog-1400x400.jpg')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>MY Blog</h1>
+                    <span class="subheading">...the secret of the Great Stories is that they have no secrets.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content-->
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+            <div class="homepage-body">
+
+                @foreach (var item in Model)
+                {
+                    <!-- Post preview-->
+                    <div class="post-preview">
+                        <a asp-action="Details" asp-route-id="@item.Id">
+                            <h2 class="post-title">
+                                @Html.DisplayFor(modelItem => item.Title)
+                            </h2>
+                            <h6 class="post-subtitle">
+                                @Html.DisplayFor(modelItem => item.Intro)
+                            </h6>
+                        </a>
+                        <p class="post-meta">
+                            Posted by
+                            <a href="#!">@Html.DisplayFor(modelItem => item.Author)</a>
+                            on @Html.DisplayFor(modelItem => item.Date)
+                        </p>
+                    </div>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <div class="text-center text-bg-warning post-subtitle small">
+                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                            | <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                            |  <a asp-action="Create">Add new post</a>
+                        </div>
+                    }
+
+                    <hr class="mb-4 mt-4">
+                }
+            </div><!--/homepage-body-->
+        </div>
+    </div>
+</div>
+
+
+

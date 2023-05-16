@@ -1,0 +1,88 @@
+﻿@model MyBlog.Models.Posts
+
+@{
+    ViewData["Title"] = "Create Post";
+}
+
+@{
+    var todaysDate = DateTime.Now.ToString("dddd, dd MMMM yyyy");
+}
+<header class="masthead" style="background-image: url('../img/blog-1400x400.jpg')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>MY Blog</h1>
+                    <span class="subheading">...the secret of the Great Stories is that they have no secrets.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+            <h4>Write Posts</h4>
+            <hr />
+            <div class="row">
+                <div class="col-lg-12 col-md-4 col-sm-1">
+                    <form asp-action="Create" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Author" class="control-label"></label>
+                            <input asp-for="Author" class="form-control" />
+                            <span asp-validation-for="Author" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Date" class="control-label"></label>
+                            <input asp-for="Date" class="form-control" value="@todaysDate"/>
+                            <span asp-validation-for="Date" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Title" class="control-label"></label>
+                            <input asp-for="Title" class="form-control" />
+                            <span asp-validation-for="Title" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input asp-for="Image" type="hidden" class="form-control" value="image" />
+                            <span asp-validation-for="Image" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="ImageFile" class="control-label"></label>
+                            <input asp-for="ImageFile" type="file" accept="image/png, image/jpeg" class="form-control" />
+                            <span asp-validation-for="ImageFile" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ImageCredit" class="control-label"></label>
+                            <input asp-for="ImageCredit" class="form-control" />
+                            <span asp-validation-for="ImageCredit" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Intro" class="control-label"></label>
+                            <textarea asp-for="Intro" class="form-control"></textarea>
+                            <span asp-validation-for="Intro" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Article" class="control-label"></label>
+                            <textarea asp-for="Article" id="create-article" class="form-control"></textarea>
+                            <span asp-validation-for="Article" class="text-danger"></span>
+                        </div>
+                        <div class="form-group mt-4">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div>
+                <a asp-action="Index">Back to List</a>
+            </div>
+
+            @section Scripts {
+                @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+            }
+        </div>
+    </div>
+</div>
